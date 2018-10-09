@@ -1,0 +1,304 @@
+// 大容器
+.mainpage {
+  width: 100%;
+  height: 100%;
+  padding: 5px 0 10px;
+  overflow: hidden;
+  background-color: $bgbox;
+  &::after {
+    @include clear_both;
+  }
+}
+
+// 顶部
+.top_wrap {
+  height: 70px;
+  width: 94%;
+  margin: 5px auto 10px;
+  @include all;
+
+  // overflow: hidden;
+  // 右上角的三角形
+  .top_normal_ysj_child {
+    @include xy_ysj_child;
+    &:after {
+      @include xy_ysj_after;
+    }
+  }
+  // 左下角的三角形
+  .top_normal_zxj_child {
+    @include xy_zxj_child;
+    &:after {
+      @include xy_zxj_after;
+    }
+  }
+  // 顶部标题栏 ** 左侧图片与文字
+  .logo_container {
+    float: left;
+    width: 340px;
+    height: 60px;
+    // overflow: hidden;
+    // background: pink;
+    .logo_img {
+      float: left;
+      height: 50px;
+      width: 50px;
+      line-height: 50px;
+      text-align: center;
+      margin: 8px 15px 0px 20px;
+      border-radius: 50%;
+      background: #ccc;
+    }
+    .logo_title {
+      float: left;
+      margin-top: 18px;
+      font-size: 20px;
+      text-shadow: 5px 5px 3px #ccc;
+      color: #fff;
+    }
+  }
+  .title_container {
+    margin-left: 34%;
+    width: 64%;
+    height: 63px;
+    line-height: 63px;
+    overflow: hidden;
+    // 标题导航栏
+    // 被分成不同区域**查看大于1001 的  小于700 的
+    .more_1001 {
+      .item_wrap {
+        float: left;
+        margin-left: 30px;
+        font-size: 20px;
+        color: $color_title;
+        cursor: pointer;
+        .aa {
+          color: $color_title;
+        }
+        &:hover {
+          color: #fff;
+        }
+        &:hover .aa {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+// 右上角三角形绝对定位
+
+//  左下角三角形绝对定位
+
+// 下部分***左侧
+.b_l_normal {
+  @include all;
+  // 梯形行对定位****有效***
+  .trapezoid_b_l {
+    @include tixing_wai;
+    left: 12%;
+    // top: -133px;
+    &::before {
+      @include tixing_nei;
+    }
+  }
+  // 下方 **左侧***梯形里面的文字
+  .trapezoid_b_l_title {
+    @include tixing_zi;
+    left: 20%;
+    // top: -182px;
+  }
+  // 右上角的三角形
+  .b_l_normal_ysj_child {
+    @include xy_ysj_child;
+    &:after {
+      @include xy_ysj_after;
+    }
+  }
+  // 左下角的三角形
+  .b_l_normal_zxj_child {
+    @include xy_zxj_child;
+    &:after {
+      @include xy_zxj_after;
+    }
+  }
+}
+
+// 下部分**中间** 上一半
+.b_m_t_normal {
+  @include all;
+  .trapezoid_b_m_t_l {
+    position: relative;
+    top: -60%;
+    left: 0%;
+    height: 120px;
+    border: 25px solid pink;
+    border-right-width: 0px;
+    border-color: transparent transparent transparent $color_border;
+
+    &::after {
+      content: ' ';
+      display: block;
+      position: relative;
+      left: -5.5%;
+      top: -19%;
+      height: 120px;
+      border: 24px solid pink;
+      border-right-width: 0px;
+      border-color: transparent transparent transparent $bgbox;
+    }
+  }
+  .trapezoid_b_m_t_r {
+    position: relative;
+    top: -108%;
+    left: 0%;
+    height: 120px;
+    border: 25px solid pink;
+    border-left-width: 0px;
+    border-color: transparent $color_border transparent transparent;
+    &::after {
+      content: ' ';
+      display: block;
+      position: relative;
+      left: 5.5%;
+      top: -19%;
+      height: 119px;
+      border: 24px solid pink;
+      border-left-width: 0px;
+      border-color: transparent $bgbox transparent transparent;
+    }
+  }
+}
+
+// 下部分**中间** 下一半
+.b_m_b_normal {
+  float: left;
+  height: 260px;
+  width: 46%;
+  margin-right: 8%;
+  &:last-child {
+    margin-right: 0%;
+  }
+  @include all;
+}
+
+// 下部分**中间 ** 下一半** 左侧梯形
+.trapezoid_b_m_b_l {
+  position: relative;
+  top: -60%;
+  left: 0%;
+  z-index: 600;
+  height: 80px;
+  border: 21px solid pink;
+  border-right-width: 0px;
+  border-color: transparent transparent transparent $color_border;
+  &::after {
+    content: ' ';
+    display: block;
+    position: relative;
+    left: -10.5%;
+    top: -24%;
+    height: 75px;
+    border: 21px solid pink;
+    border-right-width: 0px;
+    border-color: transparent transparent transparent $bgbox;
+  }
+}
+
+// 下部分**中间 ** 下一半** 右侧梯形
+.trapezoid_b_m_b_r {
+  position: relative;
+  top: -60%;
+  left: 0%;
+  z-index: 600;
+  height: 80px;
+  border: 21px solid pink;
+  border-left-width: 0px;
+  border-color: transparent $color_border transparent transparent;
+  &::after {
+    content: ' ';
+    display: block;
+    position: relative;
+    left: 10.5%;
+    top: -24%;
+    height: 75px;
+    border: 21px solid pink;
+    border-left-width: 0px;
+    border-color: transparent $bgbox transparent transparent;
+  }
+}
+// 下部分** 右侧
+.b_r_normal {
+  @include all;
+  // 梯形行对定位****有效***
+  .trapezoid_b_r {
+    @include tixing_wai;
+    left: 51%;
+    // top: -68%;
+    &::before {
+      @include tixing_nei;
+    }
+  }
+  // 下方 **y右侧***梯形里面的文字
+  .trapezoid_b_r_title {
+    @include tixing_zi;
+    left: 59%;
+    // top: -184px;
+  }
+  // 右上角的三角形
+  .b_r_normal_zsj_child {
+    @include xy_zsj_child;
+    &:after {
+      @include xy_zsj_after;
+    }
+  }
+  // 左下角的三角形
+  .b_r_normal_yxj_child {
+    @include xy_yxj_child;
+    &:after {
+      @include xy_yxj_after;
+    }
+  }
+}
+
+// echarts图形专用***下部分左右两侧
+.myChart_container {
+  position: relative;
+  top: 14%;
+  left: 0%;
+  height: 85%;
+  width: 100%;
+  // background: pink;
+}
+
+// echarts图形专用***下部分**中间***上方
+.myChart_container_mid_top {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  width: 80%;
+  // background: burlywood;
+}
+
+// echarts图形专用***下部分**中间***下方的左右两侧
+.myChart_container_mid_bottom {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  height: 80%;
+  width: 80%;
+  // background: blanchedalmond;
+}
+
+// 计算器
+.count {
+  position: fixed;
+  top: 10px;
+  left: 250px;
+  z-index: 1000;
+  height: 400px;
+  width: 400px;
+  background: beige;
+  text-align: center;
+  // font-size: 18px;
+}

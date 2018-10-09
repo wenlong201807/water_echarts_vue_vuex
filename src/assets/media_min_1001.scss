@@ -1,0 +1,70 @@
+// 顶部的标题
+// 顶部***平行四边形
+.parallel {
+  position: absolute;
+  top: -2px;
+  left: 25%;
+  height: 66px;
+  width: 50px;
+  transform: skew(-30deg);
+  border: 2px solid $color_border;
+  border-color: transparent $color_border transparent $color_border;
+  background: $bgbox;
+}
+// 顶部***梯形
+.trapezoid_top {
+  position: absolute;
+  top: 53px;
+  left: 6%;
+  border-bottom: 15px solid $color_border;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  width: 13%;
+  &:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: -4%;
+    border-bottom: 14px solid $bgbox;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    width: 99.5%;
+  }
+}
+// 顶部左侧，标题导航栏文字部分
+
+// 下部分**左侧
+.bottom_left {
+  float: left;
+  width: 27%;
+  margin-left: 3%;
+  // overflow: hidden;
+  .xz_com_min {
+    @include xzy_com_min_1001;
+  }
+}
+// 下部分** 中间
+.bottom_mid {
+  float: left;
+  width: 36%;
+  margin: 0 2%;
+  // overflow: hidden;
+  // background: #ccc;
+  .xmt_min {
+    width: 100%;
+    height: 350px;
+    margin-bottom: 10px;
+    // background: #bbb;
+  }
+}
+// 下部分**右侧
+.bottom_right {
+  float: left;
+  width: 27%;
+  // overflow: hidden;
+  // background: green;
+  .xy_com_min {
+    @include xzy_com_min_1001;
+  }
+}
